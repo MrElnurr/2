@@ -8,6 +8,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData.light(useMaterial3: true),
       home: Scaffold(
         appBar: AppBar(
@@ -99,7 +100,7 @@ class MyApp extends StatelessWidget {
                           ),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       const Row(
@@ -181,13 +182,27 @@ class MyApp extends StatelessWidget {
                           ),
                         ],
                       ),
+                      const SizedBox(height: 1),
+                      DefaultTabController(
+                        length: 2,
+                        child: TabBar(
+                          labelColor: Colors.black,
+                          tabs: const [
+                            Tab(
+                              text: 'Repost',
+                            ),
+                            Tab(text: 'Threads'),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(height: 20),
                     ],
                   ),
                 ),
               ),
             ],
           ),
-        ),  
+        ),
       ),
     );
   }
